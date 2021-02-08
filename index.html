@@ -8,6 +8,7 @@
   <body>
     <div id="app">
       {{ message }}
+      <input type="button" :value="btn" @click="onclick()">
     </div>
     Hello World!
     <input type="button" value="ハロー！" onclick="hello()">
@@ -18,7 +19,13 @@
       const App = {
         data() {
           return {
-            message: 'Hello Vue.js'
+            message: 'Hello Vue.js',
+            btn: 'ボタン'
+          }
+        },
+        methods: {
+          onclick: function() {
+            console.log('ボタンクリック!');
           }
         }
       }
