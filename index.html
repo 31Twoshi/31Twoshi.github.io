@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <title>Hello World!</title>
   </head>
   <body>
@@ -16,20 +16,18 @@
       function hello() {
         console.log('ハロハロー!');
       };
-      const App = {
-        data() {
-          return {
-            message: 'Hello Vue.js',
-            btn: 'ボタン'
-          }
+      const App = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js',
+          btn: 'ボタン'
         },
         methods: {
           onclick: function() {
-            console.log('ボタンクリック!');
+            alert('ボタンクリック!');
           }
         }
-      }
-      Vue.createApp(App).mount('#app')
+      });
     </script>
   </body>
 </html>
